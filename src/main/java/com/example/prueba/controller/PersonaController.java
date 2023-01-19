@@ -31,4 +31,9 @@ public class PersonaController {
     public ResponseEntity<?> changePerson(@RequestBody PersonaDTO persona){
         return new ResponseEntity<>(iPersonaService.update(persona),HttpStatus.OK);
     }
+    @DeleteMapping()
+    public ResponseEntity<?> erasePerson(@RequestBody PersonaDTO persona){
+        iPersonaService.delete(persona);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
 }

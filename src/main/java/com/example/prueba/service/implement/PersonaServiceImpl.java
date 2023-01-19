@@ -41,4 +41,11 @@ public class PersonaServiceImpl implements IpersonaService {
             return "No exist";
         }
     }
+    @Override
+    public void delete(PersonaDTO persona){
+        Optional<Persona> value = repository.findById(persona.getId());
+        if(value.isPresent()){
+            repository.delete(new Persona(persona));
+        }
+    }
 }

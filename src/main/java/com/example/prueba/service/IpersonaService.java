@@ -8,4 +8,5 @@ public interface IpersonaService {
     void save(PersonaDTO persona);
     List<PersonaDTO> getAll();
     String update(PersonaDTO persona);
+    void delete(PersonaDTO persona);
 }
